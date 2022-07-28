@@ -4,6 +4,7 @@
 
 - Linguagem: Python  
 
+-------------------------------------------------------------------------
 
 Função: 
 O inicializador Bileto tem a função de automatizar o processo de inicialização do sistema de venda de ingressos Bileto (Box Office), tornado mais prático e visual para as Bilheterias. Além disso, ele lê e dar devolutivas referentes as logs de impressora que está configurada no sistema, facilita o acesso a central de ajuda e ao chat do suporte.
@@ -32,7 +33,7 @@ Internamente o sistema ao iniciar fica verificando a quantidade de bytes do arqu
 
 
 
-Tópico (4) Acesso ao Suporte: 
+# Tópico (4) Acesso ao Suporte: 
 O acesso ao suporte hoje é feito através do navegador ou atalho configurado na área de trabalho.
 
 Solução:
