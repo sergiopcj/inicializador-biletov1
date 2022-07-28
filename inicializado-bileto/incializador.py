@@ -95,8 +95,8 @@ def verifica_daruma():
     mensagem_daruma_sucesso = 'Daruma successfully detected'
     mensagem_daruma_falha = 'Daruma was not detected'
 
-    arquivo_system = open("C:\Bileto\logs\system.log", "r")
-    #arquivo_system = open("C:/teste.txt", "r") essse arquivo teste
+    #arquivo_system = open("C:\Bileto\logs\system.log", "r")
+    arquivo_system = open("C:/teste.txt", "r")
     ler_arquivo = arquivo_system.read()
 
     if mensagem_daruma_sucesso in ler_arquivo:
