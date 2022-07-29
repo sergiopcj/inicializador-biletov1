@@ -1,42 +1,42 @@
 # inicializador-biletov1
 
-- Desenvolvedor ñ Sergio P. C. Junior
+- Desenvolvedor ‚Äì Sergio P. C. Junior
 
 - Linguagem: Python  
 
 -------------------------------------------------------------------------
 
-FunÁ„o: 
-O inicializador Bileto tem a funÁ„o de automatizar o processo de inicializaÁ„o do sistema de venda de ingressos Bileto (Box Office), tornado mais pr·tico e visual para as Bilheterias. AlÈm disso, ele lÍ e dar devolutivas referentes as logs de impressora que est· configurada no sistema, facilita o acesso a central de ajuda e ao chat do suporte.
+Fun√ß√£o: 
+O inicializador Bileto tem a fun√ß√£o de automatizar o processo de inicializa√ß√£o do sistema de venda de ingressos Bileto (Box Office), tornando mais pr√°tico e visual para as Bilheterias. Al√©m disso, ele l√™ e dar devolutivas referentes as logs de impressora que est√° configurada no sistema, facilita o acesso a central de ajuda e ao chat do suporte.
 
 
-# TÛpico (1) Erro da Impressora: 
-A Bileto (Box Office), utiliza para impress„o em sua maior parte a impressora TÈrmica Daruma (Dr-700/800), antes de iniciar o sistema carrega o Daruma Framework, configura Daruma port e por fim verifica se a daruma est· conectada na m·quina. Todos esses processos s„o registrados e visÌveis atravÈs da leitura da log System (c:\bileto\logs\System.log), e caso a bilheteria ligue a impressora depois do sistema ter iniciado, ele n„o realiza a impress„o. 
+# T√≥pico (1) Erro da Impressora: 
+A Bileto (Box Office), utiliza para impress√£o em sua maior parte a impressora T√©rmica Daruma (Dr-700/800), antes de iniciar o sistema carrega o Daruma Framework, configura Daruma port e por fim verifica se a daruma est√° conectada na m√°quina. Todos esses processos s√£o registrados e vis√≠veis atrav√©s da leitura da log System (c:\bileto\logs\System.log), e caso a bilheteria ligue a impressora depois do sistema ter iniciado, ele n√£o realiza a impress√£o. 
 
-SoluÁ„o: 
-AtravÈs da leitura da log System, o inicializador verifica se a impressora foi encontrada procurando o registro ìDaruma successfully detectedî no arquivo. Caso n„o encontre informa ao usu·rio as possÌveis causas e indica clicar em ìReiniciarî para uma nova busca. 
+Solu√ß√£o: 
+Atrav√©s da leitura da log System, o inicializador verifica se a impressora foi encontrada procurando o registro ‚ÄúDaruma successfully detected‚Äù no arquivo. Caso n√£o encontre informa ao usu√°rio as poss√≠veis causas e indica clicar em ‚ÄúReiniciar‚Äù para uma nova busca. 
 Ao encontrar o inicializador informa que o login pode ser realizado. 
 
-# TÛpico (2) PreferÍncia de impress„o: 
-A Daruma est· disponÌvel, porÈm n„o foi selecionada dentro do sistema como impressora para impress„o de ingresso. 
+# T√≥pico (2) Prefer√™ncia de impress√£o: 
+A Daruma est√° dispon√≠vel, por√©m n√£o foi selecionada dentro do sistema como impressora para impress√£o de ingresso. 
 
-SoluÁ„o: 
-AlÈm de verificar a disponibilidade da impressora (tÛpico 1), o sistema ler o arquivo ìprinter-configurationî (C:\bileto\conf\ printer-configuration, procurando a chave "ticketPrinterName" que registra a impressora configurada como preferÍncia de impress„o. Quando identificado o link ìcentral de Ajudaî altera para o Artigo que mostra como realizar essa alteraÁ„o. 
+Solu√ß√£o: 
+Al√©m de verificar a disponibilidade da impressora (t√≥pico 1), o sistema ler o arquivo ‚Äúprinter-configuration‚Äù (C:\bileto\conf\ printer-configuration, procurando a chave "ticketPrinterName" que registra a impressora configurada como prefer√™ncia de impress√£o. Quando identificado o link ‚Äúcentral de Ajuda‚Äù altera para o Artigo que mostra como realizar essa altera√ß√£o. 
 
-# TÛpico (3) Barra de carregamento: 
-As verificaÁıes e configuraÁ„o de impressora e sitef realizados enquanto o sistema inicia pode levar em torno de 3 a 5 minutos e a ˙nica forma de saber se o sistema est· pronto para o login È atravÈs da log System, quando ela atinge 5KB o sistema est· pronto. 
-* O Windows arredonda, mas o valor correto È 4898 bytes. 
+# T√≥pico (3) Barra de carregamento: 
+As verifica√ß√µes e configura√ß√£o de impressora e sitef realizados enquanto o sistema inicia pode levar em torno de 3 a 5 minutos e a √∫nica forma de saber se o sistema est√° pronto para o login √© atrav√©s da log System, quando ela atinge 5KB o sistema est√° pronto. 
+* O Windows arredonda, mas o valor correto √© 4898 bytes. 
 
-SoluÁ„o: 
-O Inicializador tem uma soluÁ„o gr·fica, apresentando uma barra de carregamento que mostra quando o sistema est· pronto para login. 
+Solu√ß√£o: 
+O Inicializador tem uma solu√ß√£o gr√°fica, apresentando uma barra de carregamento que mostra quando o sistema est√° pronto para login. 
 Internamente o sistema ao iniciar fica verificando a quantidade de bytes do arquivo alimentando a barra conforme o progresso.
 
 
 
-# TÛpico (4) Acesso ao Suporte: 
-O acesso ao suporte hoje È feito atravÈs do navegador ou atalho configurado na ·rea de trabalho.
+# T√≥pico (4) Acesso ao Suporte: 
+O acesso ao suporte hoje √© feito atrav√©s do navegador ou atalho configurado na √°rea de trabalho.
 
-SoluÁ„o:
-O Inicializador tem um bot„o que leva direto ao chat, e no link ìCentral de Ajudaî È disponibilizado um artigo referente ao hor·rio do suporte. 
+Solu√ß√£o:
+O Inicializador tem um bot√£o que leva direto ao chat, e no link ‚ÄúCentral de Ajuda‚Äù √© disponibilizado um artigo referente ao hor√°rio do suporte. 
 
 
