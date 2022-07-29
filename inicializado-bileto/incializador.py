@@ -46,24 +46,24 @@ def apaga_logs():
             print(f"Error:{e.strerror}")
 
 def verifica_kbyte():
-    #o sitema precisa atingir 4898 kb para funcionar
+    #o sistema precisa atingir 4898 kb para funcionar
     KBYTE_MAX = 4898
     #limete de tempo para acionar o suporte em torno de 4 minutos
     TEMPO_MAX = 1800
     #variaveis de porcentagem para barra
     dez_porc = 490
     quarenta_porc = 1960
-    seseta_porc = 2940
+    sessenta_porc = 2940
     oitenta_porc = 3920
     #indices
     Kbyte_indice = 0
     tempo_indice  = 0
-    #loop que verifica se o bileto iniciou e já criou o arquivos de log
+    #‘loop’ que verifica se o bileto iniciou e já criou os arquivos de log
     arquivo = 'C:\Bileto\logs\system.log'
     while not os.path.isfile(arquivo):
         time.sleep(2)
 
-    #loop que verifica a quantidade de kb ou tempo limite do sistema
+    #'loop' que verifica a quantidade de kb ou tempo limite do sistema
     while (Kbyte_indice < KBYTE_MAX):
          Kbyte_indice = Path('C:\Bileto\logs\system.log').stat().st_size
 
@@ -76,7 +76,7 @@ def verifica_kbyte():
          elif Kbyte_indice <= quarenta_porc:
              varBarra.set(40)
              janela.update()
-         elif Kbyte_indice <= seseta_porc:
+         elif Kbyte_indice <= sessenta_porc:
              varBarra.set(60)
              janela.update()
          elif Kbyte_indice <= oitenta_porc:
@@ -104,24 +104,24 @@ def verifica_daruma():
             mensagem = 'Sistema pronto para Login!'
         else:
             mensagem = 'Sistema foi iniciado com sucesso! \n' \
-                       'ATENÇÃO: Necessário configurar suas Preferências de Impressão no Bileto. \n' \
+                       'ATENÇÃO: Necessário configurar suas Preferências de Impressão na Bileto. \n' \
                        'Clique em Central de Ajuda!'
             link.bind("<Button-1>", lambda e: callback(
                 "https://suporte-bileto-sympla.zendesk.com/hc/pt-br/articles/7762329901965-Definir-Impressora-Padr%C3%A3o-"
             ))
     elif mensagem_daruma_falha in ler_arquivo:
         mensagem = 'Sistema está pronto para uso, mas NÃO foi localizado a DARUMA! \n ' \
-                       'Caso ela seja sua impressora padrão, verifique se ela está: \n ' \
+                       'Caso seja sua impressora padrão, verifique se ela está: \n ' \
                        'Conectada no USB, Ligada e com a Luz verde acesa. \n ' \
-                       'Clique no Reiniciar e o Sistema irá carregar novamente!'
+                       'Clique em Reiniciar e o Sistema irá carregar novamente!'
     alterar_saida(mensagem)
     arquivo_system.close()
 
-#funções de interação com a interface grafica
+#funções de interação com a interface gráfica
 
 def inciar_sistema():
     botaoIniciar.configure(text='Reiniciar')
-    alterar_saida("Carregando...")
+    alterar_saida('Carregando...')
     janela.update()
     time.sleep(2)
     fecha_bileto()
@@ -157,7 +157,7 @@ def abrir_bileto():
         os.popen(script_ps)
     except OSError as e:
         alterar_saida(f"Error:{e.strerror}")
-    mensagem = "Iniciando tela de login... Boas vendas!"
+    mensagem = 'Iniciando tela de login... Boas vendas!'
     varBarra.set(0)
     alterar_saida(mensagem)
 
@@ -168,14 +168,14 @@ def alterar_saida(texto_saida):
     saida.configure(state='disabled')
 
 
-#interface grafica
+#interface gráfica
 
 style = Style(theme='cerculean')
 janela = style.master
 janela.iconbitmap(default="img\\icone.ico")
 janela.title('Iniciador Sympla Bileto')
 
-#Frame define as dimenções da janela, e compacta todos os seu componentes
+#Frame define as dimensões da janela, e compacta todos os seus componentes
 frame_geral = ttk.Frame()
 frame_geral.configure(takefocus=False, height=400, width=500)
 frame_geral.pack(anchor="center", fill="both", expand="yes", side="top")
@@ -191,7 +191,7 @@ link.place(
 )
 
 
-# Espaço para incersão de logo Sympla-Bileto
+# Espaço para inserção de logo Sympla-Bileto
 img_logo = PhotoImage(file="img\\LogoSymplaBileto.png")
 label_img = ttk.Label(frame_geral)
 label_img.configure(image=img_logo)
@@ -222,7 +222,7 @@ botaoChat.place(
     relheight=0.10, relwidth=0.20,
     relx=0.72, rely=0.30
 )
-# Area de textos de orientação para usuario
+# Area de textos de orientação para usuário
 saida = Text(frame_geral)
 _text_ = 'Seja Bem-Vindo a Bileto! \n' \
          'Clique em "iniciar" e avisaremos quando o sistema estiver pronto.'
